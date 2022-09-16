@@ -1,21 +1,25 @@
 
 from dataclasses import dataclass
-
+from time import sleep
 
 # IDAG BYGGER Vi EN FABRIK 
 # SOM SKAPAR 1000000 burkar soppa om dagen
-
 @dataclass
 class CanOfSoup:
     Created: bool
-    Label: bool
+    Label:  bool
     Soup: bool
 
 def Create(n):
     items = []
     for x in range(0,n):
+        sleep(3)
         items.append(CanOfSoup(True,False,False))
     return items
+
+for x in Create(100):
+    print(x)
+
 
 def PutLabelOn(lista):
     for x in lista:

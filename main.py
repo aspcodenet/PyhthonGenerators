@@ -14,7 +14,7 @@ class CanOfSoup:
 def Create(n):
     items = []
     for x in range(0,n):
-        items.append(x)
+        items.append(CanOfSoup(True,False,False))
     return items
 
 def PutLabelOn(lista):
@@ -27,9 +27,11 @@ def PourSoup(lista):
         x.Soup = True
     return lista
 
-store1 = Create(10000)
+store1 = Create(100)
 store2 = PutLabelOn(store1)
 store3 = PourSoup(store2)
+for can in store3:
+    print(f"Nu packas denna {can}")
 
 
 
